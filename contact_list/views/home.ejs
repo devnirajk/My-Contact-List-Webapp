@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <ul>
+        <%for(let i=0; i<contact_List.length; i++){%>
+            <li>
+                <a href="/delete_contact/?id=<%=contact_List[i]._id%>">
+                    DELETE
+                </a>
+                <%=contact_List[i].name%>
+                    <%=contact_List[i].phone%>
+            </li>
+            <%}%>
+    </ul>
+    <form action="/create-contact" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="phone" placeholder="Phone" required>
+        <button type="submit"> ADD CONTACT </button>
+    </form>
+</body>
+
+</html>
